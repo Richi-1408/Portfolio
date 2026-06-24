@@ -1,0 +1,349 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bubble Portfolio</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI,sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#081229,#102850);
+    color:white;
+    overflow-x:hidden;
+}
+
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    backdrop-filter:blur(10px);
+    z-index:100;
+}
+
+.logo{
+    font-size:2rem;
+    font-weight:bold;
+    color:#6dd5ff;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+}
+
+section{
+    min-height:100vh;
+    padding:100px 10%;
+}
+
+.hero{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+}
+
+.hero h1{
+    font-size:4rem;
+}
+
+.hero span{
+    color:#6dd5ff;
+}
+
+.hero p{
+    margin-top:15px;
+    font-size:1.2rem;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:14px 30px;
+    border-radius:30px;
+    background:#6dd5ff;
+    color:#081229;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.about{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.glass{
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    padding:40px;
+    max-width:700px;
+}
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:25px;
+}
+
+.skill{
+    background:rgba(255,255,255,.08);
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    transition:.4s;
+}
+
+.skill:hover{
+    transform:translateY(-10px);
+}
+
+.circle{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    border:6px solid #6dd5ff;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:rgba(255,255,255,.08);
+    border-radius:20px;
+    overflow:hidden;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 25px rgba(109,213,255,.5);
+}
+
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.contact{
+    text-align:center;
+}
+
+input,textarea{
+    width:100%;
+    max-width:600px;
+    display:block;
+    margin:15px auto;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+}
+
+button{
+    padding:15px 35px;
+    border:none;
+    border-radius:30px;
+    background:#6dd5ff;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    background:rgba(0,0,0,.3);
+}
+
+/* Floating bubbles */
+.bubble{
+    position:fixed;
+    border-radius:50%;
+    background:rgba(109,213,255,.15);
+    border:1px solid rgba(255,255,255,.3);
+    animation:float linear infinite;
+    z-index:-1;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+    }
+    to{
+        transform:translateY(-120vh);
+    }
+}
+
+@media(max-width:768px){
+    .hero h1{
+        font-size:2.5rem;
+    }
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">Bubble.</div>
+
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <div>
+        <h1>Hi, I'm <span>Rizia</span></h1>
+        <p>Frontend Developer • UI Designer • Creator</p>
+        <a href="#projects" class="btn">Explore My Work</a>
+    </div>
+</section>
+
+<section id="about" class="about">
+    <div class="glass">
+        <h2>About Me</h2>
+        <br>
+        <p>
+            Passionate web developer creating elegant,
+            responsive and modern web experiences.
+            Currently building Bubble Online Shopping.
+        </p>
+    </div>
+</section>
+
+<section id="skills">
+    <h2 style="text-align:center;margin-bottom:50px;">Skills</h2>
+
+    <div class="skills-grid">
+
+        <div class="skill">
+            <div class="circle">95%</div>
+            <h3>HTML</h3>
+        </div>
+
+        <div class="skill">
+            <div class="circle">90%</div>
+            <h3>CSS</h3>
+        </div>
+
+        <div class="skill">
+            <div class="circle">80%</div>
+            <h3>JavaScript</h3>
+        </div>
+
+        <div class="skill">
+            <div class="circle">75%</div>
+            <h3>SQL</h3>
+        </div>
+
+    </div>
+</section>
+
+<section id="projects">
+    <h2 style="text-align:center;margin-bottom:50px;">Projects</h2>
+
+    <div class="projects-grid">
+
+        <div class="card">
+            <img src="https://picsum.photos/500/300?1">
+            <div class="card-content">
+                <h3>Bubble Online Shopping</h3>
+                <p>E-commerce platform with categories, cart and checkout.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/500/300?2">
+            <div class="card-content">
+                <h3>Portfolio Website</h3>
+                <p>Responsive portfolio showcasing skills and projects.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/500/300?3">
+            <div class="card-content">
+                <h3>Weather App</h3>
+                <p>Real-time weather information using APIs.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="contact" class="contact">
+    <h2>Contact Me</h2>
+
+    <input type="text" placeholder="Your Name">
+    <input type="email" placeholder="Your Email">
+    <textarea rows="6" placeholder="Message"></textarea>
+
+    <button onclick="sendMsg()">Send Message</button>
+</section>
+
+<footer>
+    © 2026 Bubble Portfolio
+</footer>
+
+<script>
+for(let i=0;i<25;i++){
+
+    let bubble=document.createElement("div");
+    bubble.classList.add("bubble");
+
+    let size=Math.random()*80+20;
+
+    bubble.style.width=size+"px";
+    bubble.style.height=size+"px";
+
+    bubble.style.left=Math.random()*100+"vw";
+
+    bubble.style.animationDuration=
+        Math.random()*15+10+"s";
+
+    document.body.appendChild(bubble);
+}
+
+function sendMsg(){
+    alert("Message Sent!");
+}
+</script>
+
+</body>
+</html>
